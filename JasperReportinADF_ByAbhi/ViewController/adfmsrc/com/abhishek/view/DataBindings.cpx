@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.abhishek.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/JasperReport.jsf" usageId="com_abhishek_view_JasperReportPageDef"/>
+    <page path="/JasperReport-in-fragment.jsff" usageId="com_abhishek_view_JasperReport_in_fragmentPageDef"/>
+    <page path="/Run-FragmentPageReport.jsf" usageId="com_abhishek_view_Run_FragmentPageReportPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_abhishek_view_JasperReportPageDef" path="com.abhishek.view.pageDefs.JasperReportPageDef"/>
+    <page id="com_abhishek_view_JasperReport_in_fragmentPageDef"
+          path="com.abhishek.view.pageDefs.JasperReport_in_fragmentPageDef"/>
+    <page id="com_abhishek_view_Run_FragmentPageReportPageDef"
+          path="com.abhishek.view.pageDefs.Run_FragmentPageReportPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="com.abhishek.model.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
